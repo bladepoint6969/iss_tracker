@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#map {
+    height: 100vh;
+    width: 100%;
+}
+
+.info-panel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.iss-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    border: 2px solid white;
+    box-shadow: 0 0 5px black;
+}
+
+.status-indicator {
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.connected {
+    color: green;
+    font-weight: bold;
+}
+
+.disconnected {
+    color: red;
+    font-weight: bold;
+}
+
+.reset-view-button, .terrain-toggle-button {
+    padding: 8px 12px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.reset-view-button {
+    background-color: #4CAF50;
+}
+
+.terrain-toggle-button {
+    background-color: #8B4513; /* Saddle brown - earthy color for terrain */
+}
+
+.reset-view-button:hover {
+    background-color: #45a049;
+}
+
+.terrain-toggle-button:hover {
+    background-color: #A0522D; /* Sienna - lighter brown on hover */
+}
+
+.button-container {
+    margin-top: 10px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISS Tracker (Rust)</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="map"></div>
+    <div class="info-panel">
+        <h2>ISS Tracker (Rust)</h2>
+        <p>Current Position:</p>
+        <p>Latitude: <span id="lat">Loading...</span></p>
+        <p>Longitude: <span id="lon">Loading...</span></p>
+        <p>Last Updated: <span id="timestamp">-</span></p>
+        <p>Positions Shown: <span id="positions-count">0</span></p>
+        <p>Path Segments: <span id="segments-count">0</span>/<span id="max-segments">2</span></p>
+        <div class="status-indicator">
+            <span id="connection-status">Connected</span>
+        </div>
+        <div class="button-container">
+            <button id="reset-view-btn" class="reset-view-button">Center on Equator</button>
+            <button id="terrain-toggle-btn" class="terrain-toggle-button">Show Terrain</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
