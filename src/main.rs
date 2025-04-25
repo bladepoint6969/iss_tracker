@@ -3,7 +3,7 @@ extern crate rocket;
 use chrono::{DateTime, Utc};
 use reqwest::{Client, StatusCode};
 use rocket::State;
-use rocket::fs::{FileServer, relative};
+use rocket::fs::FileServer;
 use rocket::serde::{Serialize, json::Json};
 use serde::Deserialize;
 use std::collections::VecDeque;
@@ -212,5 +212,5 @@ async fn rocket() -> _ {
     rocket::build()
         .manage(app_state)
         .mount("/", routes![get_positions, get_latest, get_status])
-        .mount("/", FileServer::from(relative!("static")))
+        .mount("/", FileServer::from("static"))
 }
