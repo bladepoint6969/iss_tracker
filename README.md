@@ -2,8 +2,6 @@
 
 A real-time International Space Station tracker built with Rust and Rocket.
 
-![ISS Tracker](https://via.placeholder.com/800x400?text=ISS+Tracker+Screenshot)
-
 ## Features
 
 - Real-time tracking of the International Space Station
