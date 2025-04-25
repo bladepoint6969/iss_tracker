@@ -293,10 +293,46 @@ function toggleTerrainView() {
     }
 }
 
+// Function to refresh tracking data
+function refreshTrackingData() {
+    // Clear current data
+    currentSegment = [];
+    issPath.setLatLngs([]);
+    
+    // Remove all historical path segments
+    pathSegments.forEach(segment => map.removeLayer(segment));
+    pathSegments = [];
+    
+    // Update the UI to show we're refreshing
+    document.getElementById('positions-count').textContent = '0';
+    document.getElementById('segments-count').textContent = '0';
+    document.getElementById('lat').textContent = 'Refreshing...';
+    document.getElementById('lon').textContent = 'Refreshing...';
+    document.getElementById('timestamp').textContent = '-';
+    
+    // Show a temporary loading indicator on the button
+    const refreshButton = document.getElementById('refresh-data-btn');
+    const originalText = refreshButton.textContent;
+    refreshButton.textContent = 'Refreshing...';
+    refreshButton.disabled = true;
+    
+    // Load fresh data from the server
+    loadPositionHistory().then(() => {
+        // Reset the button text and enable it
+        refreshButton.textContent = originalText;
+        refreshButton.disabled = false;
+    }).catch(error => {
+        console.error('Error refreshing data:', error);
+        refreshButton.textContent = originalText;
+        refreshButton.disabled = false;
+    });
+}
+
 // Set up the buttons
 function setupButtons() {
     document.getElementById('reset-view-btn').addEventListener('click', resetMapView);
     document.getElementById('terrain-toggle-btn').addEventListener('click', toggleTerrainView);
+    document.getElementById('refresh-data-btn').addEventListener('click', refreshTrackingData);
 }
 
 // Initial load of position history

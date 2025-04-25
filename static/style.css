@@ -45,7 +45,7 @@ body {
     font-weight: bold;
 }
 
-.reset-view-button, .terrain-toggle-button {
+.reset-view-button, .terrain-toggle-button, .refresh-data-button {
     padding: 8px 12px;
     color: white;
     border: none;
@@ -65,12 +65,20 @@ body {
     background-color: #8B4513; /* Saddle brown - earthy color for terrain */
 }
 
+.refresh-data-button {
+    background-color: #2196F3; /* Blue color for refresh */
+}
+
 .reset-view-button:hover {
     background-color: #45a049;
 }
 
 .terrain-toggle-button:hover {
     background-color: #A0522D; /* Sienna - lighter brown on hover */
+}
+
+.refresh-data-button:hover {
+    background-color: #0b7dda;
 }
 
 .button-container {
